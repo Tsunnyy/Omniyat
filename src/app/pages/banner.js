@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -15,7 +15,7 @@ export default function Banner() {
             scrollTrigger: {
                 trigger: ".hero-section",
                 start: "top top",
-                end: "bottom -500px",
+                end: "bottom -600px",
                 // end: "bottom bottom",
                 // markers: true,
                 // pinSpacing: false,
@@ -33,6 +33,21 @@ export default function Banner() {
                 end: "bottom 40%",
                 scrub: true,
                 // markers: true,
+            },
+        });
+
+        tl.to(".overlay-image", {
+            transform: 'scale(13) translate(0, -118px)',
+            // opacity: 0,
+            transformOrigin: "center",
+            // ease: "none",
+            ease: "sine.out",
+            scrollTrigger: {
+                trigger: ".overlay-image",
+                start: "50% top",
+                end: "bottom center",
+                scrub: 2,
+                // markers: true
             },
         });
 
@@ -54,7 +69,7 @@ export default function Banner() {
             ease: "slow(0.7,0.7,false)",
             scrollTrigger: {
                 trigger: ".content-with-overlay",
-                start: "center top",
+                start: "bottom -200px",
                 end: "bottom center",
                 scrub: true,
                 // markers: true,
@@ -66,7 +81,7 @@ export default function Banner() {
     return (
         <>
             <section className="hero-section">
-                <div className="white-layer"></div>
+                {/* <div className="white-layer"></div> */}
                 {/* <Image
                     src={'/images/overlay.svg'}
                     width={1000}
@@ -74,6 +89,11 @@ export default function Banner() {
                     className='overlay-image'
                     alt='Overlay Image'
                 /> */}
+                <svg width="1661" className="overlay-image" height="901" viewBox="0 0 1661 901" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M1661 0H0V900H653.289L830.5 490.5L1007.71 900H1661V0Z" fill="white" />
+                    <path d="M831.488 749L892.976 900.5H770L831.488 749Z" fill="white" />
+                </svg>
+
                 <h2 className="overlay-text">Refined living <br /> redefined</h2>
                 <video width="320" height="240" playsInline autoPlay muted loop>
                     <source src="/videos/hero.mp4" type="video/mp4" />

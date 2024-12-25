@@ -7176,7 +7176,7 @@ blockquote {
     background-color: var(--white);
     position: relative;
     overflow: hidden;
-    height: 200vh;
+    /* height: 200vh; */
 }
 
 .residence_hotspots_container.hide-alba {
@@ -7184,15 +7184,21 @@ blockquote {
 }
 
 .residence_image_main {
-    width: 100%
+    width: 100%;
+    height: 100%;
 }
 
 .residence_image_overlay {
     z-index: 2;
-    opacity: 0;
+    opacity: .2;
     width: 100%;
+    height: 100%;
     position: absolute;
-    inset: 0% auto auto 0%
+    /* inset: 0% auto auto 0% */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .residence_image_overlay.residence_image_overlay_1 {
@@ -7517,7 +7523,7 @@ blockquote {
 
 .residence_image_veil {
     z-index: 9;
-    background-color: var(--black);
+    background-color: #00000066;
     position: fixed;
     inset: 0%
 }
